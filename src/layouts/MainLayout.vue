@@ -5,18 +5,20 @@
         <q-btn
           flat @click="drawer = !drawer" round dense icon="menu" />
         
+        
+          <q-item to="/techniciens">
+            <img class="logo-technow" src="~assets/logoTechnow.png" alt="Logo Technow">
+          </q-item>
+        
 
-        <q-avatar class="logo-technow">
-          <img src="~assets/logoTechnow.png" alt="Logo Technow">
-        </q-avatar>
+          <div class="container-buttons">
+              <div class=" buttons q-pa-md q-gutter-sm">
+                <q-btn  to="/login" outline style="color: white;"  label="Connexion" />
+              </div>
+            
 
-        <div class="container-buttons">
           <div class=" buttons q-pa-md q-gutter-sm">
-            <q-btn hover-color outline style="color: white;"  label="Connexion" />
-          </div>
-
-          <div class=" buttons q-pa-md q-gutter-sm">
-            <q-btn outline style="color: white;" label="Inscription" />
+            <q-btn to="/signup" outline style="color: white;" label="Inscription" />
           </div>
         </div>
 
@@ -26,9 +28,9 @@
 
    <q-drawer
         v-model="drawer"
-        show-if-above
         :width="250"
         :breakpoint="500"
+        
       >
         <q-scroll-area class="fit">
           <q-list padding class="menu-list">
