@@ -12,7 +12,7 @@
         />
 
         <q-avatar class="logo-technow">
-          <img src="~assets/logoTechnow.png" alt="">
+          <img src="~assets/logoTechnow.png" alt="Logo Technow">
         </q-avatar>
 
         <div class="container-buttons">
@@ -33,21 +33,23 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class="bg-grey-1"
+      content-class="bg-white-1"
     >
       <q-list>
-        <q-item-label
-          header
-          class="text-grey-8"
-        >
-          Essential Links
-        </q-item-label>
+        <div class="container-logo-slide">
+          <q-avatar  header class="logo-technow">
+         <img src="~assets/logoTechnow.png" alt="" >
+        </q-avatar>
+        </div>
+    
+
         <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
         />
       </q-list>
+      
     </q-drawer>
 
     <q-page-container>
@@ -67,6 +69,9 @@
     width: 100%;
     justify-content: flex-end;
   }
+  .container-logo-slide{
+    background-color: black;
+  }
   
 </style>
 
@@ -75,46 +80,35 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: 'Demandez un devis',
+    caption: 'devis',
+    icon: 'comment',
+    link: '/devis',
+    separator: true
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: 'Voir les techniciens',
+    caption: 'techniciens',
+    icon: 'engineering',
+    link: '/techniciens'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: 'Demande express',
+    caption: 'demande',
+    icon: 'send',
+    link: '/demande'
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: 'Se connecter',
+    caption: 'signin',
+    icon: 'login',
+    link: '/signin'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+    title: `S'inscrire`,
+    caption: 'signup',
+    icon: 'source',
+    link: '/signup'
   }
 ];
 
