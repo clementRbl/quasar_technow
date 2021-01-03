@@ -1,15 +1,10 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header>
+  <q-layout view="lHh Lpr lFf" >
+    <q-header elevated>
       <q-toolbar class="bg-black">
         <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="leftDrawerOpen = !leftDrawerOpen"
-        />
+          flat @click="drawer = !drawer" round dense icon="menu" />
+        
 
         <q-avatar class="logo-technow">
           <img src="~assets/logoTechnow.png" alt="Logo Technow">
@@ -29,28 +24,62 @@
 
     </q-header>
 
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-      content-class="bg-white-1"
-    >
-      <q-list>
-        <div class="container-logo-slide">
-          <q-avatar  header class="logo-technow">
-         <img src="~assets/logoTechnow.png" alt="" >
-        </q-avatar>
-        </div>
-    
+   <q-drawer
+        v-model="drawer"
+        show-if-above
+        :width="250"
+        :breakpoint="500"
+      >
+        <q-scroll-area class="fit">
+          <q-list padding class="menu-list">
 
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-      
-    </q-drawer>
+            <q-item to="/techniciens" clickable v-ripple>
+              <img class="logo-drawer" src="~assets/logoTechnow.png" alt="Logo Technow">
+            </q-item>
+            
+
+            <q-item to="/demande" clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="inbox" />
+              </q-item-section>
+
+              <q-item-section>
+                Demande rapide
+              </q-item-section>
+            </q-item>
+
+            <q-item to="/techniciens" clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="star" />
+              </q-item-section>
+
+              <q-item-section>
+                Voir les techniciens
+              </q-item-section>
+            </q-item>
+
+            <q-item to="/login" clickable v-ripple>
+              <q-item-section avatar >
+                <q-icon name="send" />
+              </q-item-section>
+
+              <q-item-section>
+                Se connecter
+              </q-item-section>
+            </q-item>
+
+            <q-item to="/signup" clickable v-ripple>
+              <q-item-section avatar>
+                <q-icon name="drafts" />
+              </q-item-section>
+
+              <q-item-section>
+                S'inscrire
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-scroll-area>
+      </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -59,6 +88,7 @@
 </template>
 
 <style lang="scss">
+
   .logo-technow {
     margin-left: 2%;
     width: 120px;
@@ -72,53 +102,26 @@
   .container-logo-slide{
     background-color: black;
   }
+
+  .menu-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-drawer {
+    margin-top: -17%;
+  }
   
 </style>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
 
-const linksData = [
-  {
-    title: 'Demandez un devis',
-    caption: 'devis',
-    icon: 'comment',
-    link: '/devis',
-    separator: true
-  },
-  {
-    title: 'Voir les techniciens',
-    caption: 'techniciens',
-    icon: 'engineering',
-    link: '/techniciens'
-  },
-  {
-    title: 'Demande express',
-    caption: 'demande',
-    icon: 'send',
-    link: '/demande'
-  },
-  {
-    title: 'Se connecter',
-    caption: 'signin',
-    icon: 'login',
-    link: '/signin'
-  },
-  {
-    title: `S'inscrire`,
-    caption: 'signup',
-    icon: 'source',
-    link: '/signup'
-  }
-];
 
 export default {
   name: 'MainLayout',
-  components: { EssentialLink },
   data () {
     return {
-      leftDrawerOpen: false,
-      essentialLinks: linksData
+      drawer: false
     }
   }
 }

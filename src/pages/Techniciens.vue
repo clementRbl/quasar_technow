@@ -1,10 +1,9 @@
-
 <template>
   <div class="q-pl-md row items-start q-gutter-md">
     
     <div class="background-header">
       <div class="background-header-title text-h2">
-        Choisissez le technicien de votre choix
+        Choisissez le meilleur technicien
       </div>
 
       <div class=" q-mt-lg background-header-text text-h5">
@@ -136,7 +135,7 @@
           Carreleur
         </div>
         <div class="text-caption text-grey">
-          Etre a genoux n'est pas une faim en lui
+          Ne le laissez pas sur le carreau..
         </div>
       </q-card-section>
 
@@ -180,7 +179,7 @@
           Maçon
         </div>
         <div class="text-caption text-grey">
-          Truelle a la main, ne faites pas les malins
+          Truelle à la main, ne faites pas les malins
         </div>
       </q-card-section>
 
@@ -224,7 +223,7 @@
           Menuisier
         </div>
         <div class="text-caption text-grey">
-          Margot adore manger les copots de bois
+          Margot adore collectionner les copeaux de bois
         </div>
       </q-card-section>
 
