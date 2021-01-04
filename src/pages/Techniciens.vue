@@ -16,6 +16,7 @@
         Nos techniciens
       </div>
     
+  <div class="container-card">
 
     <q-card class="my-card q-ma-xl">
       <q-img src="~assets/pictures/avatar1.png" />
@@ -458,6 +459,8 @@
     </q-card>
 
   </div>
+
+  </div>
 </template>
 
 <style lang="scss">
@@ -478,8 +481,11 @@
     display: flex;
     justify-content: center;
   }
-  .mycard {
+  .container-card {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
 </style>
