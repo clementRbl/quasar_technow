@@ -37,7 +37,7 @@
 
       <div>
         <q-btn label="Connexion" type="submit" color="primary"/>
-        <q-btn label="S'inscrire" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn to="/signup" label="Pas encore de compte ?" type="reset" color="primary" flat class="q-ml-sm" />
       </div>
     </q-form>
 

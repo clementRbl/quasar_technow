@@ -35,9 +35,17 @@
         </template>
       </q-input>
 
+      <q-select 
+        v-model="model"
+        :options="options" 
+        label="Votre status" value="Client"
+        lazy-rules:
+        :rules="[ val => val && val.length > 0  || 'Veuillez choisir votre status']"
+        />
+
       <div>
-        <q-btn label="Connexion" type="submit" color="primary"/>
-        <q-btn label="S'inscrire" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn label="Valider" type="submit" color="primary"/>
+        <q-btn to="/login" label="Connexion à un compte" color="primary" flat class="q-ml-sm" />
       </div>
     </q-form>
 
@@ -67,7 +75,9 @@ export default {
     return {
       email: '',
       isPwd: true,
-      password: ''
+      password: '',
+      model: null,
+      options: ['Client', 'Entreprise']
     }
   },
 

@@ -6,7 +6,7 @@
           flat @click="drawer = !drawer" round dense icon="menu" />
         
         
-          <q-item to="/techniciens">
+          <q-item to="/">
             <img class="logo-technow" src="~assets/logoTechnow.png" alt="Logo Technow">
           </q-item>
         
@@ -35,14 +35,14 @@
         <q-scroll-area class="fit">
           <q-list padding class="menu-list">
 
-            <q-item to="/techniciens" clickable v-ripple>
+            <q-item to="/" clickable v-ripple>
               <img class="logo-drawer" src="~assets/logoTechnow.png" alt="Logo Technow">
             </q-item>
             
 
             <q-item to="/demande" clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="inbox" />
+                <q-icon name="speaker_notes" />
               </q-item-section>
 
               <q-item-section>
@@ -50,9 +50,9 @@
               </q-item-section>
             </q-item>
 
-            <q-item to="/techniciens" clickable v-ripple>
+            <q-item to="/" clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="star" />
+                <q-icon name="perm_identity" />
               </q-item-section>
 
               <q-item-section>
@@ -62,7 +62,7 @@
 
             <q-item to="/login" clickable v-ripple>
               <q-item-section avatar >
-                <q-icon name="send" />
+                <q-icon name="login" />
               </q-item-section>
 
               <q-item-section>
@@ -72,7 +72,7 @@
 
             <q-item to="/signup" clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="drafts" />
+                <q-icon name="account_box" />
               </q-item-section>
 
               <q-item-section>
