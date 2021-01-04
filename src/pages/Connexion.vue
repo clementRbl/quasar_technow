@@ -45,9 +45,6 @@
 </template>
 
 <style lang="scss">
-  .connexion-title {
-    
-  }
 
   .form{
     display: flex;
@@ -72,6 +69,7 @@ export default {
   },
 
   methods: {
+    
     onSubmit () {
       if (this.accept !== true) {
         this.$q.notify({

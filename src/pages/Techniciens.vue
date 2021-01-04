@@ -489,3 +489,13 @@
   }
   
 </style>
+
+<script>
+export default {
+  data () {
+    return {
+      stars: 4
+    }
+  }
+}
+</script>
