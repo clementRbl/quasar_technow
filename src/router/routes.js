@@ -6,6 +6,7 @@ const routes = [
     children: [
       
       { path: '/', component: () => import('pages/Techniciens.vue') },
+      { path: '/:id(\\d+)', component: () => import('pages/Technicien-details.vue') },
       { path: '/login', component: () => import('pages/Connexion.vue') },
       { path: '/signup', component: () => import('pages/Inscription.vue') },
       { path: '/demande', component: () => import('pages/DemandeExpress.vue') },

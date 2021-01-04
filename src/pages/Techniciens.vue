@@ -18,8 +18,11 @@
     
   <div class="container-card">
 
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar1.png" />
+    <q-card  class="my-card q-ma-xl" 
+      v-for="(technicien, index) in techniciens"
+      :key="index"
+      :style="{'backround-image' : 'url('+require('../assets/pictures/'+technicien.image[0])+')'}">
+      
 
       <q-card-section>
         <q-btn
@@ -32,11 +35,11 @@
 
         <div class="row no-wrap items-center">
           <div class="col text-h6 ellipsis">
-            Steven Spielberg
+            {{ technicien.name }}
           </div>
           <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
             <q-icon name="place" />
-            1.3 km
+            {{ technicien.location }}
           </div>
         </div>
 
@@ -45,406 +48,10 @@
 
       <q-card-section class="q-pt-none">
         <div class="text-subtitle1">
-          Plombier
+          {{ technicien.speciality }}
         </div>
         <div class="text-caption text-grey">
-          Au secours ça coule ! Bon, tant pis..
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar2.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-            Marlon Brando
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            12.3 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Électricien
-        </div>
-        <div class="text-caption text-grey">
-          10 ans de coups de jus à son service !
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar3.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-            Robert De Niro
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            0.3 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Carreleur
-        </div>
-        <div class="text-caption text-grey">
-          Ne le laissez pas sur le carreau..
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar4.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-            Al Pacino
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            27.6 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Maçon
-        </div>
-        <div class="text-caption text-grey">
-          Truelle à la main, ne faites pas les malins
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar5.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-            Margot Robbie
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            5.8 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Menuisier
-        </div>
-        <div class="text-caption text-grey">
-          Margot adore collectionner les copeaux de bois
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar6.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-            Scarlett Johansson
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            4.6 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Serrurier métallier
-        </div>
-        <div class="text-caption text-grey">
-          Clic, un coffre de plus ouvert !
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar7.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-            Keanu Reeves
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            3.2 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Géomètre
-        </div>
-        <div class="text-caption text-grey">
-          La géométrie est son ..euh non !
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar9.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-            Johnny Depp
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            0.2 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Charpentier
-        </div>
-        <div class="text-caption text-grey">
-          Maitre du haschi charpentier depuis des lustres...
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar10.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-             Denzel Washington
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            5.5 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Peintre
-        </div>
-        <div class="text-caption text-grey">
-          Professionnel du barbouillage rapide
-        </div>
-      </q-card-section>
-
-      <q-separator />
-
-      <q-card-actions>
-        <q-btn flat round icon="event" />
-        <q-btn flat color="primary">
-          Programmer une intervention
-        </q-btn>
-      </q-card-actions>
-    </q-card>
-
-    <q-card class="my-card q-ma-xl">
-      <q-img src="~assets/pictures/avatar8.png" />
-
-      <q-card-section>
-        <q-btn
-          fab
-          color="primary"
-          icon="place"
-          class="absolute"
-          style="top: 0; right: 12px; transform: translateY(-50%);"
-        />
-
-        <div class="row no-wrap items-center">
-          <div class="col text-h6 ellipsis">
-             Ray Liotta
-          </div>
-          <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-            <q-icon name="place" />
-            2.6 km
-          </div>
-        </div>
-
-        <q-rating v-model="stars" :max="5" size="32px" />
-      </q-card-section>
-
-      <q-card-section class="q-pt-none">
-        <div class="text-subtitle1">
-          Enseigniste
-        </div>
-        <div class="text-caption text-grey">
-          Quand ça clignote, c'est tout bon !
+          {{ technicien.description }}
         </div>
       </q-card-section>
 
@@ -492,10 +99,94 @@
 
 <script>
 export default {
-  data () {
-    return {
-      stars: 4
+  data() {
+     return {
+      techniciens: [
+        {
+          name: 'Steven Spielberg',
+          location: '1.3 km',
+          stars: 5,
+          speciality: 'Plombier',
+          description: 'Au secours ça coule ! Bon, tant pis..',
+          images: '~assets/pictures/avatar1.png'
+        },
+        {
+          name: 'Marlon Brando',
+          location: '12.3 km',
+          stars: 5,
+          speciality: 'Électricien',
+          description: '10 ans de coups de jus à son service !',
+          images: '~assets/pictures/avatar2.png'
+        },
+        {
+          name: 'Robert De Niro',
+          location: '0.3 km',
+          stars: 5,
+          speciality: 'Carreleur',
+          description: 'Ne le laissez pas sur le carreau..',
+          images: '~assets/pictures/avatar3.png'
+        },
+        {
+          name: 'Al Pacino',
+          location: '27.6 km',
+          stars: 5,
+          speciality: 'Maçon',
+          description: 'Truelle à la main, ne faites pas les malins',
+          images: '~assets/pictures/avatar4.png'
+        },
+        {
+          name: 'Margot Robbie',
+          location: '5.8 km',
+          stars: 5,
+          speciality: 'Menuisier',
+          description: 'Margot adore collectionner les copeaux de bois',
+          images: '~assets/pictures/avatar5.png'
+        },
+        {
+          name: 'Scarlett Johansson',
+          location: '4.6 km',
+          stars: 5,
+          speciality: 'Serrurier métallier',
+          description: 'Clic, un coffre de plus ouvert !',
+          images: '~assets/pictures/avatar6.png'
+        },
+        {
+          name: 'Keanu Reeves',
+          location: '3.2 km',
+          stars: 5,
+          speciality: 'Géomètre',
+          description: 'La géométrie est son ..euh non !',
+          images: '~assets/pictures/avatar7.png'
+        },
+        {
+          name: 'Johnny Depp',
+          location: '0.2 km',
+          stars: 5,
+          speciality: 'Charpentier',
+          description: 'Maitre du haschi charpentier depuis des lustres...',
+          images: '~assets/pictures/avatar8.png'
+        },
+        {
+          name: 'Denzel Washington',
+          location: '5.5 km',
+          stars: 5,
+          speciality: 'Peintre',
+          description: 'Professionnel du barbouillage rapide',
+          images: '~assets/pictures/avatar9.png'
+        },
+        {
+          name: 'Ray Liotta',
+          location: '2.6 km',
+          stars: 5,
+          speciality: 'Enseigniste',
+          description: 'Quand ça clignote, c\'est tout bon !',
+          images: '~assets/pictures/avatar10.png'
+        },
+      ],
+      stars
+      
     }
   }
 }
+
 </script>
