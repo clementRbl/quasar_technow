@@ -7,7 +7,7 @@
       </div>
 
       <div class=" q-mt-lg background-header-text text-h5">
-         Selectionnez le technicien le plus proche de votre entreprise et demandez une intervention tout de suite !
+         Selectionnez le technicien le plus proche de votre entreprise !
       </div>
 
     </div>
@@ -487,6 +487,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
   
 </style>
 
