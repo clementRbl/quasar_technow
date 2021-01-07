@@ -15,6 +15,8 @@
       <div class="container-technicien-title text-h3">
         Nos techniciens
       </div>
+
+      
     
   <div class="container-card">
 
@@ -45,7 +47,7 @@
           </div>
         </div>
 
-        <q-rating v-model="stars" :max="5" size="32px" />
+        <q-rating v-model="technicien.stars" :max="5" readonly size="32px" />
       </q-card-section>
 
       <q-card-section class="q-pt-none">
@@ -109,6 +111,8 @@
 </style>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'Techniciens',
     data() {
@@ -118,7 +122,7 @@ export default {
           id: 1,
           name: 'Steven Spielberg',
           location: '1.3 km',
-          stars: 5,
+          stars: 4,
           speciality: 'Plombier',
           description: 'Au secours ça coule ! Bon, tant pis..',
           images: 'https://nsa40.casimages.com/img/2021/01/05/mini_210105032430360383.png'
@@ -127,7 +131,7 @@ export default {
           id: 2,
           name: 'Marlon Brando',
           location: '12.3 km',
-          stars: 5,
+          stars: 3,
           speciality: 'Électricien',
           description: '10 ans de coups de jus à son service !',
           images: 'https://nsa40.casimages.com/img/2021/01/05/mini_210105032430428847.png'
@@ -136,7 +140,7 @@ export default {
           id: 3,
           name: 'Robert De Niro',
           location: '0.3 km',
-          stars: 5,
+          stars: 4,
           speciality: 'Carreleur',
           description: 'Ne le laissez pas sur le carreau..',
           images: 'https://nsa40.casimages.com/img/2021/01/05/mini_210105032430690936.png'
@@ -145,7 +149,7 @@ export default {
           id: 4,
           name: 'Al Pacino',
           location: '27.6 km',
-          stars: 5,
+          stars: 2,
           speciality: 'Maçon',
           description: 'Truelle à la main, ne faites pas les malins',
           images: 'https://nsa40.casimages.com/img/2021/01/05/mini_210105032430943151.png'
@@ -172,7 +176,7 @@ export default {
           id: 7,
           name: 'Keanu Reeves',
           location: '3.2 km',
-          stars: 5,
+          stars: 3,
           speciality: 'Géomètre',
           description: 'La géométrie est son ..euh non !',
           images: 'https://nsa40.casimages.com/img/2021/01/05/mini_210105032431705434.png'
@@ -181,7 +185,7 @@ export default {
           id: 8,
           name: 'Johnny Depp',
           location: '0.2 km',
-          stars: 5,
+          stars: 4,
           speciality: 'Charpentier',
           description: 'Maitre du haschi charpentier depuis des lustres...',
           images: 'https://nsa40.casimages.com/img/2021/01/05/mini_210105032431966916.png'
@@ -190,7 +194,7 @@ export default {
           id: 9,
           name: 'Denzel Washington',
           location: '5.5 km',
-          stars: 5,
+          stars: 2,
           speciality: 'Peintre',
           description: 'Professionnel du barbouillage rapide',
           images: 'https://nsa40.casimages.com/img/2021/01/05/mini_210105032432249324.png'
@@ -199,7 +203,7 @@ export default {
           id: 10,
           name: 'Ray Liotta',
           location: '2.6 km',
-          stars: 5,
+          stars: 1,
           speciality: 'Enseigniste',
           description: 'Quand ça clignote, c\'est tout bon !',
           images: 'https://nsa40.casimages.com/img/2021/01/05/mini_210105032432513306.png'
@@ -208,7 +212,8 @@ export default {
       model1: 'Sunday, Apr 28, 2019',
       calendar: false,
       date: '2019/03/01',
-      proxyDate: '2019/03/01'
+      proxyDate: '2019/03/01',
+      dateSelected: [],
       
     }
   },
@@ -219,7 +224,11 @@ export default {
 
     save () {
       this.date = this.proxyDate
-    }
+      this.dateSelected.push(this.date)
+      console.log(this.date);
+    },
+
+
   }
 }
 
